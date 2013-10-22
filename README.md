@@ -1,6 +1,6 @@
 # Deviant
 
-An application exception logger written in Ruby and backed by elasticsearch. It can be integrated directly into your application or as Rack middleware (coming soon).
+An application exception logger written in Ruby and backed by elasticsearch. It can be integrated directly into your application or as Rack middleware (coming soon). Search index updates can be performed asynchronously via Sidekiq.
 
 ## Installation
 
