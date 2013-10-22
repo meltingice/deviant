@@ -27,7 +27,7 @@ Deviant.configure do
 end
 ```
 
-## Generic Usage
+## Logging
 
 ``` ruby
 begin
@@ -41,6 +41,19 @@ rescue => e
 
   # Log extra metadata, such as HTTP statuses or User info
   Deviant.exception(e, status: 401, user: user.email)
+end
+```
+
+## Searching
+
+``` ruby
+# Helper method
+Deviant.client.fetch("Broken").results.map(&:message)
+Deviant.client.fetch("email:example@example.com AND status:404").results
+
+# Directly access Tire search
+Deviant.client.search do
+  query { string "email:example@example.com" }
 end
 ```
 
