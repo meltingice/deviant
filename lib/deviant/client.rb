@@ -12,6 +12,7 @@ module Deviant
     end
 
     def fetch(query, tags = [])
+      query = build_query(query)
       search do
         query { string query }
         filter :terms, tags: tags if tags.size > 0
@@ -31,6 +32,18 @@ module Deviant
 
     def store_async(entry)
       DeviantWorker.perform_async(entry)
+    end
+
+    def build_query(query)
+      if query.is_a?(Hash)
+        return query.to_a.map { |item|
+          "#{item[0]}:#{item[1]}"
+        }.join(' AND ')
+      elsif query.is_a?(Array)
+        query.join(' AND ')
+      else
+        query
+      end
     end
   end
 end

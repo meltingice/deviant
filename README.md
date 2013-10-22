@@ -49,7 +49,7 @@ end
 ``` ruby
 # Helper method
 Deviant.client.fetch("Broken").results.map(&:message)
-Deviant.client.fetch("email:example@example.com AND status:404").results
+Deviant.client.fetch(email: 'example@example.com').results
 
 # Directly access Tire search
 Deviant.client.search do
