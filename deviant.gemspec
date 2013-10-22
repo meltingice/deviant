@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.name          = "deviant"
   spec.version       = Deviant::VERSION
   spec.authors       = ["Ryan LeFevre"]
-  spec.email         = ["ryan@layervault.com"]
+  spec.email         = ["meltingice8917@gmail.com"]
   spec.description   = %q{Elasticsearch backed exception logging}
   spec.summary       = %q{Elasticsearch backed exception logging}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/meltingice/deviant"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

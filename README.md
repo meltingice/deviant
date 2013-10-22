@@ -16,6 +16,13 @@ Or install it yourself as:
 
     $ gem install deviant
 
+If you don't have elasticsearch yet, you will need to install it. Luckily it's super easy. If you're running OSX and using homebrew, simply run:
+
+```
+brew install elasticsearch
+elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
+```
+
 ## Configuration
 
 ``` ruby
