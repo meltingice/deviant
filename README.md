@@ -71,6 +71,39 @@ Deviant.client.search do
 end
 ```
 
+## Deviant Web
+
+Deviant comes with a web UI included that is built with Sinatra. You can either run it standalone or mount it as part of a Rack/Rails app.
+
+### Standalone
+
+Create a config.ru file at the root of your directory.
+
+``` ruby
+require 'deviant/web'
+
+# Configure Deviant
+Deviant.configure do
+  application 'myapp'
+  elasticsearch 'http://localhost:9200'
+end
+
+run Deviant::Web
+```
+
+Now you can run `bundle exec rackup` or use any other Rack-based server of your choice.
+
+### Integration
+
+To integrate Deviant into your Rack application, you'll want to use the URLMap plugin included with Rack. For example, to mount Deviant at `/deviant` alongside your AwesomeServer application:
+
+``` ruby
+run Rack::URLMap.new(
+  "/" => AwesomeServer::Application,
+  "/deviant" => Deviant::Web
+)
+```
+
 ## Contributing
 
 1. Fork it
