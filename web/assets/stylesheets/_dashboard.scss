@@ -1,0 +1,40 @@
+#Dashboard {
+  width: $site_width;
+
+  .Clear {
+    border-bottom: 1px $light_grey solid;
+  }
+
+  .DashboardBox {
+    width: ($site_width / 2);
+    float: left;
+    padding: 10px;
+    margin: 10px 0;
+
+    &.FullWidth {
+      width: $site_width - 40;
+    }
+
+    .Number {
+      font-size: 36px;
+      font-weight: 400;
+    }
+
+    .Meta {
+      background-color: $lighter_grey;
+      display: inline-block;
+      border-radius: 4px;
+      
+      a, span {
+        color: $black;
+        text-decoration: none;
+        font-size: 12px;
+        line-height: golden-ratio(12px, 1);
+        padding: 0 10px;
+        border-left: 1px $light_grey solid;
+
+        &:first-child { border: none; }
+      }
+    }
+  }
+}

@@ -1,45 +1,6 @@
 @import 'bourbon/bourbon';
+@import 'config';
 @import 'colors';
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: $helvetica;
-}
-
-#Nav {
-  background-color: $black;
-  padding: 0px 20px;
-  height: 40px;
-
-  #NavContents {
-    width: 840px;
-    margin: auto;
-
-    * {
-      color: $white;
-      line-height: 40px;
-      font-weight: 300;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    #NavLeft {
-      float: left;
-      
-      font-size: 24px;
-      letter-spacing: 0.2em;
-    }
-
-    #NavRight {
-      float: right;
-      font-size: 14px;
-
-      a {
-        margin-left: 25px;
-      }
-    }
-  }
-}
+@import 'global';
+@import 'navigation';
+@import 'dashboard';

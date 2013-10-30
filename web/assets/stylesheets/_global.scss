@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Avenir Next', $helvetica;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+* { @include box-sizing(border-box); }
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5 {
+  color: $black;
+  font-weight: bold;
+}
+
+h1, .h1 {
+  font-size: 32px;
+  line-height: golden-ratio(34px, 1);
+}
+
+h2, .h2 {
+  font-size: 28px;
+  line-height: golden-ratio(28px, 1);
+}
+
+h3, .h3 {
+  font-size: 24px;
+  line-height: golden-ratio(24px, 1);
+}
+
+h4, .h4 {
+  font-size: 22px;
+  line-height: golden-ratio(22px, 1);
+}
+
+h5, .h5 {
+  font-size: 18px;
+  line-height: golden-ratio(18px, 1);
+}
+
+.Clear {
+  @include clearfix;
+}
+
+#Content {
+  width: $site_width;
+  margin: 20px auto;
+}
