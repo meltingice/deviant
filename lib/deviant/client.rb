@@ -6,7 +6,7 @@ module Deviant
 
     def store(name, message, data = {})
       entry = {name: name, message: message, date: Time.now}.merge(data)
-      return store_async(entry) if @options[:sidekiq][:enabled]
+      return store_async(entry) if @options[:sidekiq]
 
       index { store(entry) }
     end
