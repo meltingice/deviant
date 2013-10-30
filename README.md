@@ -90,11 +90,9 @@ Now you can run `bundle exec rackup` or use any other Rack-based server of your 
 To integrate Deviant into your Rack application, you'll want to use the URLMap plugin included with Rack. For example, to mount Deviant at `/deviant` alongside your AwesomeServer application:
 
 ``` ruby
-require 'deviant/web'
-
 run Rack::URLMap.new(
-    "/" => AwesomeServer::Application,
-    "/deviant" => Deviant::Web
+  "/" => AwesomeServer::Application,
+  "/deviant" => Deviant::Web
 )
 ```
 
