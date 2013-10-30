@@ -5,17 +5,16 @@ module Deviant
     end
 
     def store(name, message, data = {})
-      entry = {name: name, message: message, date: Time.now}.merge(data)
+      entry = {name: name, message: message, date: Time.now, metadata: data}
       return store_async(entry) if @options[:sidekiq]
 
       index { store(entry) }
     end
 
-    def fetch(query, tags = [])
+    def fetch(query)
       query = build_query(query)
       search do
         query { string query }
-        filter :terms, tags: tags if tags.size > 0
         sort { by :date, 'desc' }
       end
     end

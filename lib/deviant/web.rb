@@ -30,6 +30,8 @@ module Deviant
     }
 
     get '/' do
+      @last_error = Deviant.client.fetch('*:*').results.to_ary.last
+
       erb :dashboard
     end
   end

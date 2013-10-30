@@ -1,10 +1,4 @@
-require 'deviant'
-
-Deviant.configure do
-  application 'testing'
-  elasticsearch 'http://localhost:9200'
-  # sidekiq true
-end
+require_relative './config'
 
 Deviant.client.index { delete }
 Deviant.exception(StandardError.new("Fail"), user: 1)

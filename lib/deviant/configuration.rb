@@ -42,5 +42,18 @@ module Deviant
         url Deviant.options[:elasticsearch_url]
       end
     end
+
+    Tire.index options[:name] do
+      create({
+        mappings: {
+          exception: {
+            name: { type: 'string', analyzer: 'snowball' },
+            message: { type: 'string', analyzer: 'snowball', boost: 2.0 },
+            date: { type: 'date' },
+            metadata: { type: 'object' }
+          }
+        }
+      })
+    end
   end
 end

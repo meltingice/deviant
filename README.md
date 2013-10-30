@@ -1,6 +1,14 @@
 # Deviant
 
-An application exception logger written in Ruby and backed by elasticsearch. It can be integrated directly into your application or as Rack middleware (coming soon). Search index updates can be performed asynchronously via Sidekiq.
+An application exception logger written in Ruby and backed by elasticsearch.
+
+## Features
+
+* Integrates directly into your application with a dead simple API
+* Has a web UI built in for analyzing and searching exception data
+* Powerful search allows you to quickly find errors for investigating
+* Can store arbitrary (searchable) metadata along with the exception, such as: user email, HTTP status, etc
+* Sidekiq support for asynchronously updating the search index
 
 ## Installation
 
@@ -39,7 +47,7 @@ end
 begin
   my_broken_code
 rescue => e
-  # Generic Usage
+  # Generic Usage. Simply give Deviant the exception object.
   Deviant.exception(e)
 
   # All methods can end with ! to re-raise the exception after logging
