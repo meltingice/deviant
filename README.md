@@ -28,7 +28,6 @@ elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.
 ``` ruby
 Deviant.configure do
   application 'my_application'
-  redis Redis.current
   elasticsearch 'http://localhost:9292'
   sidekiq true
 end
