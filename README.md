@@ -63,6 +63,10 @@ Deviant.client.search do
 end
 ```
 
+## Deviant Web
+
+Deviant comes with a web UI included that is built with Sinatra. You can either run it standalone or mount it as part of a Rack/Rails app.
+
 ## Contributing
 
 1. Fork it
